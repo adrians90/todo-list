@@ -11,11 +11,14 @@ const form = document.querySelector("#new-todo-form")
 const todoInput = document.querySelector("#todo-input")
 const list = document.querySelector("#list")
 const template = document.querySelector("#list-item-template")
-
+const todos = []
+//Add todos
+//Delete todos
 form.addEventListener("submit", e => {
     e.preventDefault()
     const todoName = todoInput.value
     if(todoName === "") return
+    todos.push(todoName)
     renderTodo(todoName)
     todoInput.value = ""
 })
@@ -27,3 +30,7 @@ function renderTodo(todoName) {
     list.appendChild(templateClone)
 }
 
+//Save todos
+function saveTodos() {
+
+}
